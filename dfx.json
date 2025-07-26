@@ -1,0 +1,20 @@
+{
+  "canisters": {
+    "ui": {
+      "type": "assets",
+      "frontend": {
+        "entrypoint": "out/index.html"
+      },
+      "source": ["out"]
+    },
+    "core": {
+      "type": "motoko",
+      "main": "canisters/core.mo"
+    }
+  },
+  "defaults": {
+    "build": {
+      "packtool": "mops sources"
+    }
+  }
+}
