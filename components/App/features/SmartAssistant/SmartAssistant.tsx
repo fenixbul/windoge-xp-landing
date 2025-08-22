@@ -8,6 +8,7 @@ import ChatInput from './ChatInput';
 import { ChatMessage as ChatMessageType } from './types';
 import { useInitializeUser } from '@/store/hooks';
 import { getInternetIdentityIntroMessages, getDefaultWelcomeMessage } from './utils/messages';
+import { aiService } from '@/lib/services';
 import styles from './SmartAssistant.module.css';
 
 const SmartAssistant: React.FC = () => {
@@ -28,7 +29,8 @@ const SmartAssistant: React.FC = () => {
   useEffect(() => {
     const initCase = getInitializationCase();
     
-    // TODO: Remove this once we have a proper AI assistant and BUG FIXED
+    // TODO: Remove this once we have a proper AI assistant and FIX BUG
+    // eslint-disable-next-line no-constant-condition
     if (initCase === 'SHOW_II_INTRO' && false) {
       // Create multiple messages for II intro
       const introMessages = getInternetIdentityIntroMessages();
@@ -49,7 +51,7 @@ const SmartAssistant: React.FC = () => {
       };
       setMessages([initialMessage]);
     }
-  }, [isConnected, hasViewedIIIntro]); // Use actual state values instead of function
+  }, []); // Use actual state values instead of function
 
   useEffect(() => {
     if (!showWindow && el.current) {
@@ -88,7 +90,7 @@ const SmartAssistant: React.FC = () => {
     setShowWindow(false);
   };
 
-  const handleSendMessage = (message: string) => {
+  const handleSendMessage = async (message: string) => {
     // Mark II intro as viewed if user is engaging with the assistant
     const initCase = getInitializationCase();
     if (initCase === 'SHOW_II_INTRO') {
@@ -106,17 +108,31 @@ const SmartAssistant: React.FC = () => {
     setMessages(prev => [...prev, userMessage]);
     setIsTyping(true);
 
-    // TODO: Replace with actual AI response
-    setTimeout(() => {
+    try {
+      // Call the AI service
+      const response = await aiService.sendMessage(message);
+      
       const assistantMessage: ChatMessageType = {
         id: (Date.now() + 1).toString(),
-        message: "Thanks for your message! This is a placeholder response. TODO: Implement actual AI conversation logic.",
+        message: response,
         isUser: false,
         timestamp: ''
       };
       setMessages(prev => [...prev, assistantMessage]);
+    } catch (error) {
+      console.error('Error calling AI service:', error);
+      
+      // Fallback error message
+      const errorMessage: ChatMessageType = {
+        id: (Date.now() + 1).toString(),
+        message: "Sorry, I'm having trouble connecting to the AI service. Please try again later.",
+        isUser: false,
+        timestamp: ''
+      };
+      setMessages(prev => [...prev, errorMessage]);
+    } finally {
       setIsTyping(false);
-    }, 1500);
+    }
   };
 
   return (
