@@ -57,6 +57,11 @@
     --chart-5: 340 75% 55%
   }
 
+  html, body {
+    touch-action: manipulation;
+    -ms-touch-action: manipulation; /* old Edge/IE fallback */
+  }
+
   /* Issue 2: Horizontal blue gradient background */
   body {
     margin: 0;
@@ -64,6 +69,13 @@
     background: linear-gradient(to right, #003399, #3366cc);
     min-height: 100vh;
     font-family: Tahoma, Verdana, Segoe UI, Arial, sans-serif;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
   }
 }
 
@@ -150,6 +162,35 @@
     background: #00cc00;
     transition: width 0.3s ease;
   }
+}
+
+/* Speech Bubble Styles - Reusable across components */
+.speech-bubble {
+  position: absolute;
+  bottom: 100%;
+  right: 10px;
+  margin-bottom: 20px;
+  background: #e6e6ce;
+  border-radius: .4em;
+  font-size: 14px;
+}
+
+.speech-bubble:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border: 10px solid transparent;
+  border-top-color: #e6e6ce;
+  border-bottom: 0;
+  margin-left: -10px;
+  margin-bottom: -10px;
+}
+
+.typed-cursor {
+  color: black;
+  font-weight: normal;
 }
 
 /* Mobile responsive styles for content area */

@@ -1,0 +1,23 @@
+/* Chat Container - Windows XP Messenger Style */
+.chatContainer {
+  background: #edebda; /* Outer background */
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.chatMessages {
+  flex: 1;
+  background: #fdfdfd; /* Conversation container bg */
+  border: 1px solid #b3b5b5; /* Little border */
+  margin: 8px;
+  margin-bottom: 0; /* No bottom margin to connect with input */
+  padding: 10px 5px;
+  overflow-y: auto;
+  min-height: 200px; /* Minimum height for messages */
+  position: absolute;
+  height: calc(100% - 62px);
+  top: 0;
+  left: 0;
+  width: calc(100% - 15px);
+}

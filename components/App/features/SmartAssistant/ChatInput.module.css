@@ -1,0 +1,53 @@
+/* Chat Input - Windows XP Style */
+.chatInputContainer {
+  background: #edebda; /* Outer bg */
+  padding: 8px;
+  border-top: 1px solid #b3b5b5;
+}
+
+.chatInputForm {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.chatInput {
+  flex: 1;
+  padding: 6px 8px;
+  border: 1px solid #b3b5b5;
+  background: #fff;
+  font-size: 12px;
+  font-family: inherit;
+  outline: none;
+}
+
+.chatInput:focus {
+  border-color: #0058f2;
+}
+
+.chatInput::placeholder {
+  color: #999;
+  font-style: italic;
+}
+
+.chatSendButton {
+  padding: 6px 12px;
+  background: #0058f2;
+  color: white;
+  border: 1px solid #0058f2;
+  font-size: 12px;
+  cursor: pointer;
+  min-width: 50px;
+}
+
+.chatSendButton:hover:not(:disabled) {
+  background: #0040c1;
+  border-color: #0040c1;
+}
+
+.chatSendButton:disabled {
+  background: #ccc;
+  border-color: #ccc;
+  cursor: not-allowed;
+  opacity: 0.6;
+}

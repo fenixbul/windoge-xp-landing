@@ -3,3 +3,8 @@
 /out/
 .mops
 .dfx
+.cursor
+
+.DS_Store
+
+src/declarations/

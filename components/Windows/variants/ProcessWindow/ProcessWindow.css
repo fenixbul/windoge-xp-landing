@@ -1,0 +1,169 @@
+/* Process Window Styles */
+.process-window-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Tahoma', 'MS Sans Serif', sans-serif;
+}
+
+/* Header Section */
+.process-header {
+  background-color: #ffffff;
+  border-bottom: 1px solid #c0c0c0;
+  padding: 16px 20px;
+}
+
+.process-header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.process-header-text {
+  flex: 1;
+}
+
+.process-title {
+  font-size: 13px;
+  font-weight: bold;
+  color: #000000;
+  margin: 0 0 4px 0;
+}
+
+.process-subtitle {
+  font-size: 11px;
+  color: #666666;
+  margin: 0;
+}
+
+.process-header-icon {
+  width: 32px;
+  height: 32px;
+  margin-left: 16px;
+}
+
+.process-header-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Body Section */
+.process-body {
+  background-color: #f0f0f0;
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+/* Footer Section */
+.process-footer {
+  background-color: #f0f0f0;
+  border-top: 1px solid #c0c0c0;
+  padding: 12px 16px;
+}
+
+.process-footer-buttons {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+/* Windows XP Style Buttons */
+.process-btn {
+  min-width: 75px;
+  height: 23px;
+  background: #e1e1e1;
+  border: 1px solid #003c74;
+  font-family: 'Tahoma', sans-serif;
+  font-size: 11px;
+  cursor: pointer;
+  padding: 2px 8px;
+}
+
+.process-btn:hover {
+  background: #e5f1fb;
+}
+
+.process-btn:active {
+  border: 1px solid #0078d4;
+  background: #cce4f7;
+}
+
+.process-btn-next {
+  font-weight: bold;
+}
+
+/* Process Window Options - Reusable for any scenario */
+.process-options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px 0;
+}
+
+.process-option {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  background: #ffffff;
+  border: 2px solid #0056b3;
+  border-radius: 0;
+  cursor: pointer;
+  transition: all 0.1s ease;
+  position: relative;
+  
+  /* Windows XP inner border effect */
+  box-shadow: 
+    inset 1px 1px 0 #dfdfdf,
+    inset -1px -1px 0 #808080;
+}
+
+.process-option:hover {
+  border-color: #0056b3;
+  box-shadow: 
+    inset 1px 1px 0 #ffffff,
+    inset -1px -1px 0 #808080,
+    2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.process-option:active {
+  background: #e0e0e0;
+  box-shadow: 
+    inset -1px -1px 0 #dfdfdf,
+    inset 1px 1px 0 #808080;
+}
+
+.process-option-icon {
+  font-size: 24px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 12px;
+  flex-shrink: 0;
+}
+
+.process-option-text {
+  font-family: 'Tahoma', sans-serif;
+  font-size: 13px;
+  font-weight: normal;
+  color: #000000;
+  flex: 1;
+  text-align: left;
+}
+
+/* Focus state for accessibility */
+.process-option:focus {
+  outline: 1px dotted #000000;
+  outline-offset: -3px;
+}
+
+/* Disabled state */
+.process-option.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
+}

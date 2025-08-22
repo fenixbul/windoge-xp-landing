@@ -1,0 +1,4 @@
+/* Clippy Speech Bubble Positioning */
+.speechBubble:after {
+  left: 68% !important;
+}

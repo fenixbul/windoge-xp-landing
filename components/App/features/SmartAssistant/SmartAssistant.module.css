@@ -1,0 +1,40 @@
+/* Smart Assistant Container */
+.smartAssistantContainer {
+  position: fixed;
+  z-index: 10;
+  bottom: 60px;
+  right: 40px;
+  display: flex;
+  align-items: end;
+  gap: 0.75rem; /* gap-3 */
+  color: black;
+  padding-right: 10px;
+  padding-bottom: 10px;
+}
+
+/* Doge Image Styling */
+.smartAssistantDoge {
+  height: auto;
+  width: 144px;
+  cursor: pointer;
+}
+
+.speechBubble:after {
+  left: 42%;
+}
+
+/* Mobile responsive styles */
+@media (max-width: 768px) {
+  .smartAssistantContainer {
+    bottom: 30px;
+    right: 0;
+  }
+  
+  .smartAssistantDoge {
+    width: 120px;
+  }
+
+  .speechBubble:after {
+    left: 53% !important;
+  }
+}

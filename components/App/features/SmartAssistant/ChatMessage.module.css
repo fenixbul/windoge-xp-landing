@@ -1,0 +1,70 @@
+/* Chat Message Styling - Windows XP Messenger */
+.chatMessage {
+  display: flex;
+  margin-bottom: 12px;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 0 8px; /* Add horizontal padding to prevent overflow */
+}
+
+/* Assistant messages on left */
+.assistantMessage {
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+/* User messages on right */
+.userMessage {
+  flex-direction: row-reverse;
+  justify-content: flex-start;
+}
+
+/* Avatar styling */
+.messageAvatar img {
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+/* Message bubbles */
+.messageBubble {
+  padding: 8px 12px;
+  font-size: 12px;
+  line-height: 1.4;
+  word-wrap: break-word;
+  display: inline-block;
+  max-width: 100%;
+  min-width: fit-content;
+}
+
+/* Assistant message styling */
+.assistantMessage .messageBubble {
+  background: #d3e7fc; /* Assistant message color */
+  color: #000;
+  border-radius: 0; /* No border radius */
+}
+
+/* User message styling */
+.userMessage .messageBubble {
+  background: #0058f2; /* User message bg */
+  color: #d3e6ff; /* User msg color */
+  border-radius: 0; /* No border radius */
+}
+
+/* Timestamp (optional) */
+.messageTimestamp {
+  font-size: 10px;
+  color: #666;
+  margin-top: 2px;
+  text-align: center;
+}
+
+/* Align content based on message type */
+.assistantMessage .messageContent {
+  text-align: left;
+}
+
+.userMessage .messageContent {
+  text-align: right;
+}

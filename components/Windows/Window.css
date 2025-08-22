@@ -1,0 +1,443 @@
+/* Windows XP Window Component Styles */
+.xp-window {
+  position: absolute;
+  padding: 3px;
+  flex-direction: column;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  cursor: auto;
+  /* FIXED: Add border-box to include padding in dimensions */
+  box-sizing: border-box;
+}
+
+/* FIXED: Mobile fullscreen - keep borders but adjust for proper sizing */
+.xp-window.mobile.fullscreen {
+  /* Keep the borders and padding - border-box handles the sizing */
+  border-radius: 0 !important;
+  /* Override any transform or positioning issues */
+  transform: none !important;
+}
+
+.xp-window.mobile.fullscreen .header__bg {
+  border-radius: 0 !important;
+  /* Ensure header background covers full width */
+  left: 0;
+  right: 0;
+}
+
+.xp-window.mobile.fullscreen .app__header {
+  /* Adjust header positioning for fullscreen */
+  left: 3px; /* Keep the padding offset */
+  right: 3px;
+}
+
+.xp-window.mobile.fullscreen .app__content {
+  /* Content should fill remaining space properly */
+  margin-top: 25px;
+  height: calc(100vh - 25px - 6px) !important; /* Account for top/bottom padding (3px each) */
+  border: 1px solid #808080; /* Keep the border */
+  border-top: none;
+}
+
+/* Window Focus States */
+.xp-window.focused {
+  background-color: #0831d9;
+}
+
+.xp-window.unfocused {
+  background-color: #6582f5;
+}
+
+/* Apply border-box to all window elements */
+.xp-window *,
+.xp-window *::before,
+.xp-window *::after {
+  box-sizing: border-box;
+}
+
+/* Header Background Gradient */
+.header__bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  height: 28px;
+  pointer-events: none;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  overflow: hidden;
+}
+
+/* Focused Window Header Background */
+.xp-window.focused .header__bg {
+  background: linear-gradient(to bottom,
+    #0058ee 0%,
+    #3593ff 4%,
+    #288eff 6%,
+    #127dff 8%,
+    #036ffc 10%,
+    #0262ee 14%,
+    #0057e5 20%,
+    #0054e3 24%,
+    #0055eb 56%,
+    #005bf5 66%,
+    #026afe 76%,
+    #0062ef 86%,
+    #0052d6 92%,
+    #0040ab 94%,
+    #003092 100%);
+}
+
+/* Unfocused Window Header Background */
+.xp-window.unfocused .header__bg {
+  background: linear-gradient(to bottom,
+    #7697e7 0%,
+    #7e9ee3 3%,
+    #94afe8 6%,
+    #97b4e9 8%,
+    #82a5e4 14%,
+    #7c9fe2 17%,
+    #7996de 25%,
+    #7b99e1 56%,
+    #82a9e9 81%,
+    #80a5e7 89%,
+    #7b96e1 94%,
+    #7a93df 97%,
+    #abbae3 100%);
+}
+
+/* Header Gradient Side Effects */
+.header__bg:before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  background: linear-gradient(to right, #1638e6 0%, transparent 100%);
+  top: 0;
+  bottom: 0;
+  width: 15px;
+}
+
+.header__bg:after {
+  content: '';
+  display: block;
+  position: absolute;
+  right: 0;
+  background: linear-gradient(to left, #1638e6 0%, transparent 100%);
+  top: 0;
+  bottom: 0;
+  width: 15px;
+}
+
+.xp-window.focused .header__bg:before,
+.xp-window.focused .header__bg:after {
+  opacity: 1;
+}
+
+.xp-window.unfocused .header__bg:before {
+  opacity: 0.3;
+}
+
+.xp-window.unfocused .header__bg:after {
+  opacity: 0.4;
+}
+
+/* Window Header */
+.app__header {
+  display: flex;
+  height: 25px;
+  line-height: 25px;
+  font-weight: 500;
+  font-size: 12px;
+  font-family: 'Noto Sans', Tahoma, Verdana, Arial, sans-serif;
+  text-shadow: 1px 1px #000;
+  color: white;
+  position: absolute;
+  left: 3px;
+  right: 3px;
+  align-items: center;
+  z-index: 20;
+}
+
+/* Header Icon */
+.app__header__icon {
+  width: 15px;
+  height: 15px;
+  margin-left: 1px;
+  margin-right: 3px;
+}
+
+/* Header Title */
+.app__header__title {
+  flex: 1;
+  pointer-events: none;
+  padding-right: 5px;
+  letter-spacing: 0.5px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* Window Controls */
+.window-controls {
+  height: 22px;
+  display: flex;
+  align-items: center;
+  margin-top: -1px;
+  margin-right: 1px;
+}
+
+.xp-window.focused .window-controls {
+  opacity: 1;
+}
+
+.xp-window.unfocused .window-controls {
+  opacity: 0.6;
+}
+
+/* Control Buttons Base */
+.header__button {
+  margin-right: 1px;
+  position: relative;
+  width: 22px;
+  height: 22px;
+  border: 1px solid #fff;
+  border-radius: 3px;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.header__button:hover {
+  filter: brightness(120%);
+}
+
+.header__button:hover:active {
+  filter: brightness(90%);
+}
+
+/* Minimize Button */
+.header__button--minimize {
+  box-shadow: inset 0 -1px 2px 1px #4646ff;
+  background-image: radial-gradient(
+    circle at 90% 90%,
+    #0054e9 0%,
+    #2263d5 55%,
+    #4479e4 70%,
+    #a3bbec 90%,
+    white 100%
+  );
+}
+
+.header__button--minimize:before {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 13px;
+  height: 3px;
+  width: 8px;
+  background-color: white;
+}
+
+/* Maximize Button */
+.header__button--maximize {
+  box-shadow: inset 0 -1px 2px 1px #4646ff;
+  background-image: radial-gradient(
+    circle at 90% 90%,
+    #0054e9 0%,
+    #2263d5 55%,
+    #4479e4 70%,
+    #a3bbec 90%,
+    white 100%
+  );
+}
+
+.header__button--maximize:before {
+  content: '';
+  position: absolute;
+  display: block;
+  left: 4px;
+  top: 4px;
+  box-shadow: inset 0 3px white, inset 0 0 0 1px white;
+  height: 12px;
+  width: 12px;
+}
+
+/* Maximized Button (alternative state) */
+.header__button--maximized {
+  box-shadow: inset 0 -1px 2px 1px #4646ff;
+  background-image: radial-gradient(
+    circle at 90% 90%,
+    #0054e9 0%,
+    #2263d5 55%,
+    #4479e4 70%,
+    #a3bbec 90%,
+    white 100%
+  );
+}
+
+.header__button--maximized:before {
+  content: '';
+  position: absolute;
+  display: block;
+  left: 7px;
+  top: 4px;
+  box-shadow: inset 0 2px white, inset 0 0 0 1px white;
+  height: 8px;
+  width: 8px;
+}
+
+.header__button--maximized:after {
+  content: '';
+  position: absolute;
+  display: block;
+  left: 4px;
+  top: 7px;
+  box-shadow: inset 0 2px white, inset 0 0 0 1px white, 1px -1px #136dff;
+  height: 8px;
+  width: 8px;
+  background-color: #136dff;
+}
+
+/* Close Button */
+.header__button--close {
+  box-shadow: inset 0 -1px 2px 1px #da4600;
+  background-image: radial-gradient(
+    circle at 90% 90%,
+    #cc4600 0%,
+    #dc6527 55%,
+    #cd7546 70%,
+    #ffccb2 90%,
+    white 100%
+  );
+}
+
+.header__button--close:before {
+  content: '';
+  position: absolute;
+  left: 9px;
+  top: 2px;
+  transform: rotate(45deg);
+  height: 16px;
+  width: 2px;
+  background-color: white;
+}
+
+.header__button--close:after {
+  content: '';
+  position: absolute;
+  left: 9px;
+  top: 2px;
+  transform: rotate(-45deg);
+  height: 16px;
+  width: 2px;
+  background-color: white;
+}
+
+/* Disabled Button State */
+.header__button--disable {
+  outline: none;
+  opacity: 0.5;
+}
+
+.header__button--disable:hover {
+  filter: brightness(100%);
+}
+
+/* Window Content */
+.app__content {
+  flex: 1;
+  position: relative;
+  margin-top: 25px;
+  height: calc(100% - 25px);
+  background-color: #f0f0f0;
+  border: 1px solid #808080;
+  border-top: none;
+}
+
+/* Content Container */
+.com__content {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.com__content__inner {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  overflow: auto;
+}
+
+/* Hidden Header Styles */
+.xp-window .app__header.hidden {
+  display: none;
+}
+
+.xp-window.header-hidden {
+  padding: 0;
+}
+
+.xp-window.header-hidden .app__content {
+  margin-top: 0;
+  height: 100%;
+}
+
+/* Step 1: Mobile responsiveness */
+.xp-window.mobile {
+  border-radius: 0 !important;
+}
+
+.xp-window.mobile .header__bg {
+  border-radius: 0 !important;
+}
+
+/* TODO: Step 2 - Add more sophisticated mobile styles */
+/* TODO: Step 3 - Add tablet breakpoints */
+/* TODO: Step 4 - Add advanced positioning options */
+/* TODO: Step 5 - Add window resize handles */
+
+/* Step 2: Enhanced Responsive Classes */
+
+/* Mobile styles */
+.xp-window.mobile {
+  border-radius: 0 !important;
+}
+
+.xp-window.mobile .header__bg {
+  border-radius: 0 !important;
+}
+
+.xp-window.mobile .app__content {
+  /* Optimize for touch on mobile */
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Tablet styles */
+.xp-window.tablet {
+  /* TODO: Add tablet-specific optimizations */
+}
+
+/* Desktop styles */
+.xp-window.desktop {
+  /* TODO: Add desktop-specific optimizations like drop shadows */
+}
+
+/* Responsive header adjustments */
+@media (max-width: 767px) {
+  .xp-window .app__header {
+    font-size: 11px; /* Slightly smaller on mobile */
+  }
+  
+  .xp-window .window-controls {
+    height: 20px; /* Smaller controls on mobile */
+  }
+  
+  .xp-window .header__button {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* TODO: Step 3 - Add advanced responsive features */
+/* TODO: Step 4 - Add window animations */
+/* TODO: Step 5 - Add drag and resize functionality */
