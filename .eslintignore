@@ -1,0 +1,23 @@
+# Generated declarations
+src/declarations/
+
+# Build output
+.next/
+out/
+
+# Dependencies
+node_modules/
+
+# Logs
+*.log
+
+# Environment variables
+.env*
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
