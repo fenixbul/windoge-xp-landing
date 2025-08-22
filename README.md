@@ -1,31 +1,25 @@
-# Windows XP OS - Web3 Bridge
+# Windoge XP - Web3 Bridge
 
-> *Building a bridge between nostalgic technology and the future of decentralized clouds*
+> *Making Web3 approachable through Windows XP nostalgia*
 
-Our mission is to create an ecosystem that onboards people into true Web3 by combining the familiar, nostalgic experience of Windows XP with the cutting-edge technology of the **Internet Computer (ICP)**.
-
-✅ **MVP Successfully Deployed**
+A platform that helps people learn about Web3 by wrapping Internet Computer technology in the familiar, comfortable interface of Windows XP.
 
 ## 🚀 Live Demo
 
-- **Landing Page**: [https://xxtyt-wiaaa-aaaag-aue6q-cai.icp0.io/](https://xxtyt-wiaaa-aaaag-aue6q-cai.icp0.io/)
-- **Windoge XP OS**: [https://www.windogexp.net/](https://www.windogexp.net/)
+- **Windoge XP (OS)**: [https://xxtyt-wiaaa-aaaag-aue6q-cai.icp0.io/](https://xxtyt-wiaaa-aaaag-aue6q-cai.icp0.io/)
 
-## ✨ Phase 1 Achievements
+## ✨ What We've Built
 
-### 🖥️ Windows XP-Inspired Landing Page
-- Authentic Windows XP login screen design
-- Deployed on Internet Computer
-- Redirect functionality to on-chain OS
+### 🖥️ Phase 1 - Foundation
+- Windows XP login screen deployed on Internet Computer
+- Core LLM canister with Motoko integration
+- Basic AI assistant for Web3 education
 
-### 🧠 LLM Core Canister
-- **Canister ID**: `xqs6h-3qaaa-aaaag-aue6a-cai`
-- LLM skeleton implementation deployed
-- AI assistant specialized in Windows XP and ICP education
-
-### 📎 User Experience
-- Interactive elements that bridge Web2 nostalgia with Web3 innovation
-- Familiar interface for Web3 onboarding
+### 🚀 Phase 2 - Full Experience  
+- **Login Options**: Guest access + Internet Identity authentication
+- **Desktop Environment**: Windows XP shell with desktop state management
+- **Windoge Assistant**: Interactive AI chat with LLM integration
+- **Canister ID**: `xqs6h-3qaaa-aaaag-aue6a-cai` (live and working)
 
 ## 🛠️ Technology Stack
 
@@ -34,26 +28,24 @@ Our mission is to create an ecosystem that onboards people into true Web3 by com
 - **Canisters**: Motoko
 - **AI Integration**: LLM integration through Motoko
 
-## 🔮 Next Steps
+## 🔮 What's Next
 
-Once we advance past Phase 1, our roadmap includes:
+### Phase 3 - User Personalization
+- **AI Model Selection**: Let users choose their preferred LLM model
+- **User Profiles**: Save preferences and conversation history  
+- **Web3 Help Center**: Structured learning modules about Internet Computer
 
-- **Internet Identity Integration**
-- **AI Assistant Integration** 
-- **Enhanced AI Personalization**
-- **Educational Content Expansion**
-- **Community Features**
+## 🎯 Try It Out
 
-## 🌐 Core Infrastructure
+1. Visit [https://xxtyt-wiaaa-aaaag-aue6q-cai.icp0.io/](https://xxtyt-wiaaa-aaaag-aue6q-cai.icp0.io/)
+2. Log in as Guest or with Internet Identity
+3. Click the Doge assistant in the corner
+4. Ask it about Windows XP or Internet Computer
+5. Experience Web3 through familiar Windows XP interface
 
-  ```motoko
-  // Deployed Canister: xqs6h-3qaaa-aaaag-aue6a-cai
-  public func promptLLM(prompt: Text) : async Text
-  ```
+## 📊 Current Status
 
-## 🎊 Metrics
-
-- ✅ UI successfully deployed and accessible
-- ✅ LLM skeleton functional on-chain
-- ✅ Redirect link operational to on-chain OS
-- ✅ MVP demonstrates concept viability
+- ✅ **Deployed**: Live on Internet Computer mainnet
+- ✅ **Functional**: AI assistant responding from on-chain canister
+- ✅ **Accessible**: Works on desktop and mobile
+- ✅ **Educational**: Teaching Web3 concepts through nostalgia
