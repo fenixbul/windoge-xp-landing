@@ -26,7 +26,6 @@ const LoginWindow: React.FC<LoginWindowProps> = ({
   useEffect(() => {
     if (show && isConnected && walletState.type === 'internet-identity' && systemState.currentState !== OSState.DESKTOP) {
       console.log('II login successful, transitioning to desktop');
-      goToState(OSState.DESKTOP);
       // Close window after successful login and state transition
       setTimeout(() => {
         onClose?.();
