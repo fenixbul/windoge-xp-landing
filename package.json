@@ -10,7 +10,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint . --ext .ts,.tsx",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "generate": "dfx generate",
+    "build:canister": "dfx generate && npm run build"
   },
   "author": "...",
   "license": "CC0",
